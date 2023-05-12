@@ -1,0 +1,15 @@
+.navbar{
+    background-color: #2c2c54;
+    color: #fff;
+    height: 50px;
+    box-shadow: 0px 0px 10px #333;
+}
+
+.navbar-brand{
+    color: #fff;
+}
+
+.side-nav-button{
+    cursor: pointer;
+    font-size: 16px;
+}

@@ -1,0 +1,13 @@
+.form-label{
+    margin-bottom: 0!important;
+    margin-top: 1rem;
+}
+.form-control:focus{
+    box-shadow: none;
+}
+
+h5 {
+    font-size: 16px;
+    margin: 1.5rem 0 0.5rem 0;
+    font-weight: 300;
+}

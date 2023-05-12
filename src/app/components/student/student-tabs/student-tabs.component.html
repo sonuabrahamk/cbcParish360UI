@@ -1,0 +1,28 @@
+<nav ngbNav #nav="ngbNav" class="nav-tabs">
+	<ng-container ngbNavItem>
+		<a ngbNavLink>Student Info</a>
+		<ng-template ngbNavContent>
+			<app-student-details 
+				permission={{this.permission}} 
+				student={{this.student}}>
+			</app-student-details>
+		</ng-template>
+	</ng-container>
+	<ng-container ngbNavItem *ngIf="this.permission != 'create'">
+		<a ngbNavLink>Documents</a>
+		<ng-template ngbNavContent>
+			<app-document-list 
+			permission={{this.permission}} 
+			student={{this.student}>
+		</app-document-list>
+		</ng-template>
+	</ng-container>
+	<ng-container ngbNavItem *ngIf="this.permission != 'create'">
+		<a ngbNavLink>Payment</a>
+		<ng-template ngbNavContent>
+			<h5>To be Implemented!</h5>
+		</ng-template>
+	</ng-container>
+</nav>
+
+<div [ngbNavOutlet]="nav" class="nav-content"></div>

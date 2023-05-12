@@ -1,0 +1,26 @@
+.body-content{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 85%;
+    height: calc(100% - 50px);
+    background-color: #f7f1e3;
+    padding: 1rem;
+    transition: all ease-in-out .3s;
+    overflow-y: auto;
+}
+
+.body-content::-webkit-scrollbar{
+    width: 5px;
+    background-color: #eee;
+}
+
+.body-content::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #2c2c54;
+}
+
+
+.body-content-toggled {
+    width: 100%;
+}

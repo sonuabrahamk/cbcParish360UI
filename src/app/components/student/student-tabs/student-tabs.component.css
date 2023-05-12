@@ -1,0 +1,20 @@
+.nav-tabs {
+    --bs-nav-tabs-border-width: 2px;
+    --bs-nav-tabs-border-color: #40407a;
+    --bs-nav-tabs-border-radius: 0.375rem;
+    --bs-nav-tabs-link-hover-border-color: #40407a #40407a #dee2e6;
+    --bs-nav-tabs-link-active-color: #40407a;
+    --bs-nav-tabs-link-active-bg: #fff;
+    --bs-nav-tabs-link-active-border-color: #40407a #40407a #fff;
+    border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
+}
+.nav-content{
+    background-color: #fff;
+    margin: 0;
+    padding: 10px;
+}
+
+a{
+    font-size: 16px;
+    font-weight: bolder;
+}

@@ -1,0 +1,31 @@
+<div class="sidebar" [ngClass]="getSideNavClass()">
+    <div class="sidebar-content">
+        <div class="profile p-3 text-center border-bottom">
+            <img src="../../../assets/img/user.png" alt="profile img" class="card-img rounded-circle w-50" />
+            <h5>Sonu Abraham K</h5>
+            <p>Superadmin | Parish360</p>
+        </div>
+        <ul class="nav nav-pills flex-column">
+            <li class="nav-item" *ngFor="let data of navData">
+                <a class="nav-link" *ngIf="data.items && data.items.length > 0" (click)="handleClick(data)">
+                    <i [ngClass]="[data.icon]"></i>
+                    <span class="sidebar-link">
+                        {{data.label}}
+                    </span>
+                    <i *ngIf="data.items && !subMenuCollapsed" class="menu-collapse-icon"
+                        [ngClass]="!data.expanded ? 'fa-solid fa-caret-right' : 'fa-solid fa-caret-down'"></i>
+                </a>
+                <a class="nav-link" *ngIf="!data.items || (data.items && data.items.length === 0)"
+                    [routerLink]="[data.routeLink]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <i [ngClass]="[data.icon]"></i>
+                    <span class="sidebar-link">{{data.label}}</span>
+                </a>
+                <div *ngIf="!subMenuCollapsed && data.items && data.items.length > 0">
+                    <app-sub-navbar [data]="data" [collapsed]="subMenuCollapsed" [multiple]="multiple"
+                        [expanded]="data.expanded"></app-sub-navbar>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>

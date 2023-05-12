@@ -1,0 +1,19 @@
+<div class="header">
+  <i class="fa-solid fa-file-lines"></i>
+  <span>Diocese List</span>
+  <hr />
+</div>
+
+<div class="text-end">
+  <app-create-diocese-modal></app-create-diocese-modal>
+</div>
+
+<ag-grid-angular
+  class="ag-theme-material"
+  style="height: 90%; width: 100%"
+  [rowData]="rowData"
+  [columnDefs]="colDefs"
+  [defaultColDef]="defaultColDefs"
+  [pagination]="true"
+>
+</ag-grid-angular>

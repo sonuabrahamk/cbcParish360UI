@@ -1,0 +1,10 @@
+.form-label{
+    margin-bottom: 0!important;
+    margin-top: 1rem;
+}
+.form-control:focus{
+    box-shadow: none;
+}
+.modal-body{
+    padding-top: 0px;
+}
