@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ColDef } from 'ag-grid-community';
-import { CreateDioceseModalComponent } from 'src/app/components/diocese/create-diocese-modal/create-diocese-modal.component';
+import { ParishModalComponent } from 'src/app/components/parish/parish-modal/parish-modal.component';
 
 @Component({
   selector: 'app-parish-list',
@@ -134,7 +134,7 @@ export class ParishListComponent {
   colDefs: ColDef[] = [
     { 
       field: 'Diocese ID',
-      cellRenderer: CreateDioceseModalComponent
+      cellRenderer: ParishModalComponent
     },
     { field: 'Name'},
     { field: 'Code'},
