@@ -77,6 +77,7 @@
     </div>
   </form>
 </ng-template>
-<button class="btn btn-md btn-primary mb-2 pull-right" (click)="open(content)">
+<button *ngIf="this.dioceseId == ''" class="btn btn-md btn-primary mb-2 pull-right" (click)="open(content)">
   <i class="fa-solid fa-plus"></i> Create Diocese
 </button>
+<a (click)="open(content)" *ngIf="this.dioceseId != ''" href="#">{{this.dioceseId}}</a>

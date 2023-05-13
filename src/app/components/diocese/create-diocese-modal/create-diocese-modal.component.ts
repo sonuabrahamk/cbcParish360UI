@@ -1,17 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ICellRendererAngularComp } from 'ag-grid-angular';
+import { ICellRenderer, ICellRendererParams } from 'ag-grid-community';
 
 @Component({
   selector: 'app-create-diocese-modal',
   templateUrl: './create-diocese-modal.component.html',
   styleUrls: ['./create-diocese-modal.component.css'],
 })
-export class CreateDioceseModalComponent implements OnInit {
+export class CreateDioceseModalComponent implements ICellRendererAngularComp {
   closeResult = '';
+  dioceseId = '';
 
   constructor(private modalService: NgbModal) {}
 
-  ngOnInit(): void {}
+  agInit(params: ICellRendererParams<any, any, any>): void {
+    this.dioceseId = params.value;
+  }
+  
+  refresh(params: ICellRendererParams<any, any, any>): boolean {
+    return false;
+  }
 
   open(content: any) {
     this.modalService

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ColDef, ICellRendererParams } from 'ag-grid-community';
+import { CreateDioceseModalComponent } from '../../../components/diocese/create-diocese-modal/create-diocese-modal.component';
 
 @Component({
   selector: 'app-diocese-list',
@@ -138,9 +139,7 @@ export class DioceseListComponent implements OnInit {
   colDefs: ColDef[] = [
     { 
       field: 'Diocese ID',
-      cellRenderer: (params: ICellRendererParams) => {
-        return `<a href="./student-info/${params.value}/read">${params.value}</a>`;
-      }
+      cellRenderer: CreateDioceseModalComponent
     },
     { field: 'Name'},
     { field: 'Code'},
