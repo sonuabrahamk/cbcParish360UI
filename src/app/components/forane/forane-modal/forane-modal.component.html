@@ -1,0 +1,86 @@
+<ng-template #content let-modal>
+  <form #dioceseForm="ngForm" (ngSubmit)="dioceseFormSubmit(dioceseForm.value)">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Create Diocese</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-8">
+            <label for="dioceseName" class="form-label">Diocese Name</label>
+            <input
+              type="text"
+              class="form-control"
+              ngModel
+              name="dioceseName"
+            />
+          </div>
+          <div class="col-md-4">
+            <label for="code" class="form-label">Code</label>
+            <input type="text" class="form-control" ngModel name="code" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-8">
+            <label for="directorName" class="form-label">Director's Name</label>
+            <input
+              type="text"
+              class="form-control"
+              ngModel
+              name="directorName"
+            />
+          </div>
+          <div class="col-md-4">
+            <label for="category" class="form-label">Category</label>
+            <input type="text" class="form-control" ngModel name="category" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-5">
+            <label for="rite" class="form-label">Rite</label>
+            <input type="text" class="form-control" ngModel name="rite" />
+          </div>
+          <div class="col-md-7">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" ngModel name="location" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-5">
+            <label for="contactNo" class="form-label">Contact No</label>
+            <input type="text" class="form-control" ngModel name="contactNo" />
+          </div>
+          <div class="col-md-7">
+            <label for="emailId" class="form-label">Email ID</label>
+            <input type="text" class="form-control" ngModel name="emailId" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark">Create</button>
+    </div>
+  </form>
+</ng-template>
+<button
+  *ngIf="this.dioceseId == ''"
+  class="btn btn-md btn-primary mb-2 pull-right"
+  (click)="open(content)"
+>
+  <i class="fa-solid fa-plus"></i> Create Forane
+</button>
+<a (click)="open(content)" *ngIf="this.dioceseId != ''">{{
+  this.dioceseId
+}}</a>

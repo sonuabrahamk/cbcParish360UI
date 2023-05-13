@@ -21,6 +21,10 @@ import { DocumentListComponent } from './components/common/document-list/documen
 import { DioceseListComponent } from './pages/diocese/diocese-list/diocese-list.component';
 import { CreateDioceseModalComponent } from './components/diocese/create-diocese-modal/create-diocese-modal.component';
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { ForaneListComponent } from './pages/forane/forane-list/forane-list.component';
+import { ForaneModalComponent } from './components/forane/forane-modal/forane-modal.component';
+import { ParishModalComponent } from './components/parish/parish-modal/parish-modal.component';
+import { ParishListComponent } from './pages/parish/parish-list/parish-list.component';
 
 @NgModule({
     declarations: [
@@ -36,8 +40,12 @@ import { OAuthModule } from 'angular-oauth2-oidc';
         StudentTabsComponent,
         DocumentListComponent,
         DioceseListComponent,
-        CreateDioceseModalComponent
-    ],
+        CreateDioceseModalComponent,
+        ForaneListComponent, 
+        ParishListComponent, 
+        ForaneModalComponent, 
+        ParishModalComponent, 
+        ParishModalComponent],
     providers: [],
     bootstrap: [AppComponent],
     imports: [
