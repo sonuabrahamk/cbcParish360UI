@@ -9,19 +9,21 @@ interface SidebarToggle {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'cbcParish360UI';
-
-  constructor(private readonly oidc: OidcServiceService){}
-
   isSideNavCollapsed = false;
   screenWidth = 0;
+
+  constructor(private readonly oidc: OidcServiceService) {}
+
+  isLoggedIn(): boolean {
+    return this.oidc.isLoggedIn();
+  }
 
   onToggleSidebar(data: SidebarToggle): void {
     this.screenWidth = data.screenWidth;
     this.isSideNavCollapsed = data.collapsed;
   }
-
 }

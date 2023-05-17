@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,43 +21,45 @@ import { StudentDetailsComponent } from './components/student/student-details/st
 import { DocumentListComponent } from './components/common/document-list/document-list.component';
 import { DioceseListComponent } from './pages/diocese/diocese-list/diocese-list.component';
 import { CreateDioceseModalComponent } from './components/diocese/create-diocese-modal/create-diocese-modal.component';
-import { OAuthModule } from 'angular-oauth2-oidc';
 import { ForaneListComponent } from './pages/forane/forane-list/forane-list.component';
 import { ForaneModalComponent } from './components/forane/forane-modal/forane-modal.component';
 import { ParishModalComponent } from './components/parish/parish-modal/parish-modal.component';
 import { ParishListComponent } from './pages/parish/parish-list/parish-list.component';
+import { LoaderComponent } from './components/common/loader/loader.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeaderComponent,
-        SidebarComponent,
-        BodyComponent,
-        StudentListComponent,
-        DashboardComponent,
-        SubNavbarComponent,
-        StudentInfoComponent,
-        StudentDetailsComponent,
-        StudentTabsComponent,
-        DocumentListComponent,
-        DioceseListComponent,
-        CreateDioceseModalComponent,
-        ForaneListComponent, 
-        ParishListComponent, 
-        ForaneModalComponent, 
-        ParishModalComponent, 
-        ParishModalComponent],
-    providers: [],
-    bootstrap: [AppComponent],
-    imports: [
-        HttpClientModule,
-        OAuthModule.forRoot(),
-        BrowserModule,
-        AppRoutingModule,
-        AgGridModule,
-        NgbModule,
-        NgbNavModule,
-        FormsModule
-    ]
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SidebarComponent,
+    BodyComponent,
+    StudentListComponent,
+    DashboardComponent,
+    SubNavbarComponent,
+    StudentInfoComponent,
+    StudentDetailsComponent,
+    StudentTabsComponent,
+    DocumentListComponent,
+    DioceseListComponent,
+    CreateDioceseModalComponent,
+    ForaneListComponent,
+    ParishListComponent,
+    ForaneModalComponent,
+    ParishModalComponent,
+    ParishModalComponent,
+    LoaderComponent,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+  imports: [
+    HttpClientModule,
+    OAuthModule.forRoot(),
+    BrowserModule,
+    AppRoutingModule,
+    AgGridModule,
+    NgbModule,
+    NgbNavModule,
+    FormsModule,
+  ],
 })
-export class AppModule { }
+export class AppModule {}

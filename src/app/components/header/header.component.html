@@ -1,16 +1,16 @@
 <nav class="navbar fixed-top">
-        <div class="col pb-3">
-            <div class="side-nav-button d-inline-block mx-2 px-2" (click)="toggleSidebar()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <a class="navbar-brand d-inline-block px-2" href="#">Parish360</a>
-        </div>
-        <div class="col text-end pb-3">
-            <button class="mx-2 btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">
-                Profile
-            </button>
-            <button class="mx-2 btn btn-outline-danger">
-                <i class="fa-solid fa-right-from-bracket"></i>
-            </button>
-        </div>
+  <div class="col pb-3">
+    <div
+      class="side-nav-button d-inline-block mx-2 px-2"
+      (click)="toggleSidebar()"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <a class="navbar-brand d-inline-block px-2" href="#">Parish360</a>
+  </div>
+  <div class="col text-end pb-3">
+    <button class="mx-2 btn btn-outline-danger" (click)="logOut()">
+      <i class="fa-solid fa-right-from-bracket"></i>
+    </button>
+  </div>
 </nav>

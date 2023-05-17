@@ -1,15 +1,14 @@
-<div class="container-fluid g-0">
-    <app-header (onToggleSidebar)="onToggleSidebar($event)"></app-header>
-    <main>
-        <app-sidebar
-            [collapsed]="isSideNavCollapsed"
-            [screenWidth]="screenWidth"
-            [subMenuCollapsed]="false"
-        ></app-sidebar>
-        <app-body
-            [collapsed]="isSideNavCollapsed"
-            [screenWidth]="screenWidth"
-        ></app-body>
-    </main>
+<div class="container-fluid g-0" *ngIf="isLoggedIn()">
+  <app-header (onToggleSidebar)="onToggleSidebar($event)"></app-header>
+  <main>
+    <app-sidebar
+      [collapsed]="isSideNavCollapsed"
+      [screenWidth]="screenWidth"
+      [subMenuCollapsed]="false"
+    ></app-sidebar>
+    <app-body
+      [collapsed]="isSideNavCollapsed"
+      [screenWidth]="screenWidth"
+    ></app-body>
+  </main>
 </div>
-
