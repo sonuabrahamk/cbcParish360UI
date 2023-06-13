@@ -28,6 +28,8 @@ export interface Profile {
 })
 export class OidcServiceService {
   userProfileSubject = new Subject<Profile>();
+  userRoles: string[] = [];
+  userPermissions: string[] = [];
 
   constructor(private readonly oAuthService: OAuthService) {
     oAuthService.configure(oAuthConfig);
@@ -37,7 +39,7 @@ export class OidcServiceService {
 
   login() {
     this.oAuthService.loadDiscoveryDocument().then(() => {
-      this.oAuthService.tryLoginImplicitFlow().then(() => {
+      this.oAuthService.tryLoginImplicitFlow().then(async () => {
         if (!this.oAuthService.hasValidAccessToken()) {
           this.oAuthService.initLoginFlow();
         } else {
@@ -46,6 +48,7 @@ export class OidcServiceService {
             const profile = JSON.parse(JSON.stringify(userProfile));
             GlobalSettings.profile = profile;
           });
+          await this.checkUserPermissions();
         }
       });
     });
@@ -57,5 +60,12 @@ export class OidcServiceService {
 
   signOut(): void {
     this.oAuthService.logOut();
+  }
+
+  async checkUserPermissions(): Promise<void> {
+    if (GlobalSettings.profile.info.email === 'sonu.abrahamk@gmail.com') {
+      this.userRoles = ['admin'];
+      this.userPermissions = ['view', 'edit'];
+    }
   }
 }
